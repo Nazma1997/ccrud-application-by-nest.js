@@ -3,7 +3,8 @@
     "error",
     {
       "singleQuote": false,
-      "parser": "flow"
+      "parser": "flow",
+      "printWidth": 50
       
     }
   ]
