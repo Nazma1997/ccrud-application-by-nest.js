@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { AuthService } from './auth.service';
-import { Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
+import { AuthDto } from './dto';
 
 
 @Controller('auth')
@@ -8,13 +9,14 @@ export class AuthController {
   constructor(private AuthService: AuthService) {}
 
   @Post('signup')
-  signup(){
-     return this.AuthService.signup()
+  signup(@Body() dto: AuthDto) {
+
+    console.log(dto)
+    return this.AuthService.signup();
   }
 
   @Post('signin')
-  signin(){
-    return  this.AuthService.signin()
+  signin() {
+    return this.AuthService.signin();
   }
- 
 }
